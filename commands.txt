@@ -1,0 +1,9 @@
+py -m projectenv
+venv\Scripts\activate
+pip install django
+django-admin startproject core .
+py manage.py startapp users
+py manage.py makemigrations 
+pip install coverage
+coverage run --omit='*/venv/*' manage.py test
+coverage html
